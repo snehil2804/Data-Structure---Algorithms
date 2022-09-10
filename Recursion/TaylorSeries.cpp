@@ -16,28 +16,28 @@ int e(int x, int n)
     }
 }
 // using loop
-// int e2(int x, int n)
-// {
-//     double s = 1;
-//     double num = 1;
-//     double den = 1;
-//     for (int i = 1; i <= n; i++)
-//     {
-//         num *= x;
-//         den *= i;
-//         s += num / den;
-//     }
-//     return s;
-// }
+int e2(int x, int n)
+{
+    double s = 1;
+    double num = 1;
+    double den = 1;
+    for (int i = 1; i <= n; i++)
+    {
+        num *= x;
+        den *= i;
+        s += num / den;
+    }
+    return s;
+}
 // using Horner's rule ( recursion)
-// int e3(int x, int n)
-// {
-//     static double s;
-//     if (n == 0)
-//         return s;
-//     s = 1 + x * s / n;
-//     return e3(x, n - 1);
-// }
+int e3(int x, int n)
+{
+    static double s;
+    if (n == 0)
+        return s;
+    s = 1 + x * s / n;
+    return e3(x, n - 1);
+}
 
 int main()
 {
